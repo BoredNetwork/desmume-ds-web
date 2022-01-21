@@ -1,10 +1,11 @@
 <html>
   <body>
+    <input type="file" style="position: relative; transform: translate(-50%, -50%); left: 30%; top: 90%;"></input>
     <desmond-player id="player"></desmond-player>
     <script src="desmond.min.js"></script>
     <script>
-      window.onload = function(){
-        document.getElementById("player").loadURL("");
+      document.querySelector("input").onchange = function(){
+        document.querySelector("desmond-player").loadURL(URL.createObjectURL(document.querySelector("input").files[0]))
       }
     </script>
   </body>
